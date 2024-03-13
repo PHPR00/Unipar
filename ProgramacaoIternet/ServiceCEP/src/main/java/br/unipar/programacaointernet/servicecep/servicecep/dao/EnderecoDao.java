@@ -8,7 +8,8 @@ public interface EnderecoDao {
     void  save(Endereco endereco);
     void update(Endereco endereco);
     void delete(Endereco endereco);
-    Endereco FindById(Long id);
 
     List<Endereco> findAll();
+
+    Endereco findById(Long id);
 }

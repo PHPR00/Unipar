@@ -51,12 +51,25 @@ public class EnderecoDAOImpl implements EnderecoDao {
     }
 
     @Override
-    public Endereco FindById(Long id) {
-        return null;
+    public Endereco findById(Long id) {
+        return em.find(Endereco.class, id);
     }
 
     @Override
     public List<Endereco> findAll() {
-        return null;
+        return em.createQuery("SELECT e FROM Endereco e",
+                Endereco.class).getResultList();}
+
+
+    /**@Override
+    public Usuario findById(Long id){
+    return em.find(Endereco.class, id);
     }
+
+     @Override
+     public List<Usuario> findAll() {
+     return em.createQuery("SELECT u FROM Endereco e",
+     Endereco.class).getResultList();
+     }**/
+
 }

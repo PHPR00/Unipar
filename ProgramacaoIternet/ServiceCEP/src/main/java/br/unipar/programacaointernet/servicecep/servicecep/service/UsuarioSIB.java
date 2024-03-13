@@ -12,15 +12,11 @@ public class UsuarioSIB implements UsuarioSEI {
     public String boasVinda(String nome) {
         return "BEm VIndo";
     }
+
     @Override
     public Usuario consultaUsuario(Long idusuario) {
         UsuarioDAO usuarioDAO = new UsuarioDAOImpl(EntityManagerUtil.getManager());
         Usuario usuario = usuarioDAO.findById(idusuario);
-
-
         return usuario;
     }
-
-
-
 }

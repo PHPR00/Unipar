@@ -11,20 +11,45 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class Main {
     public static void main(String[] args) {
+        int selecao;
         try {
             EntityManagerUtil.getEntityManagerFactory();
             UsuarioDAO usuarioDAO = new UsuarioDAOImpl(EntityManagerUtil.getManager());
+            /**
+            Scanner scan = new Scanner(System.in);
+
+            System.out.println(getViaCep("Usuário 1 ou Endereço 2 "));
+            selecao = scan.nextInt();
+
+            if(selecao == 1){
+                System.out.println(getViaCep("Adicionar, Editar, Deletar"));
+                selecao = scan.nextInt();
+                if (selecao == 1){
+                    salvarUsuario();
+                } else if (selecao == 2) {
+                    editarUsuario();
+                } else if (selecao == 3) {
+                    deletarUsuario();
+                }else
+                    System.out.println(getViaCep("Opção não registrada"));
+
+            } else if (selecao == 2) {
+
+            }else
+                System.out.println(getViaCep("Opção não registrada"));
+                **/
 
             //salvarUsuario();
             //editarUsuario();
             //deletarUsuario();
             //buscarTodosUsuarios();
             //buscarTodosPorID();
-            salvarEndereco();
+            //salvarEndereco();
 
         } catch (Exception e) {
             System.out.println(e);
@@ -33,7 +58,6 @@ public class Main {
 
     private static void salvarEndereco() {
         try {
-            System.out.println("Penses");
             EnderecoDao enderecoDao = new EnderecoDAOImpl(EntityManagerUtil.getManager());
             enderecoDao.save(getViaCep("85900120"));
             System.out.println(getViaCep("85900120"));
@@ -73,7 +97,7 @@ public class Main {
     private static void salvarUsuario() {
         UsuarioDAO usuarioDAO = new UsuarioDAOImpl(EntityManagerUtil.getManager());
 
-        Usuario usuario = new Usuario();
+       Usuario usuario = new Usuario();
 
 
         usuario.setNome("Zezinho");
