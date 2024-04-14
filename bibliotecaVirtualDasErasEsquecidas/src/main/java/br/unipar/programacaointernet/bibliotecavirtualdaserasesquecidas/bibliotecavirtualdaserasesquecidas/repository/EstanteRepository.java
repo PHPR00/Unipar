@@ -1,17 +1,21 @@
 package br.unipar.programacaointernet.bibliotecavirtualdaserasesquecidas.bibliotecavirtualdaserasesquecidas.repository;
 
 import br.unipar.programacaointernet.bibliotecavirtualdaserasesquecidas.bibliotecavirtualdaserasesquecidas.model.Estante;
+
+import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
 import java.util.List;
 
+@Stateless
 public class EstanteRepository {
     @PersistenceContext(unitName = "HibernateMaven")
     private EntityManager em;
 
     public List<Estante> listarTodasEstantes() {
-        String jpql = "SELECT l FROM Estante l";
+
+        String jpql = "SELECT e FROM Estante e";
         return em.createQuery(jpql, Estante.class).getResultList();
     }
 
@@ -23,7 +27,7 @@ public class EstanteRepository {
         try {
             em.persist(estante);
         } catch (Exception ex) {
-            throw new Exception("Livro não pode ser cadastrado");
+            throw new Exception("Estante não pode ser cadastrado");
         }
     }
 }

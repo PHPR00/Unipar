@@ -1,11 +1,13 @@
 package br.unipar.programacaointernet.bibliotecavirtualdaserasesquecidas.bibliotecavirtualdaserasesquecidas.repository;
 
 import br.unipar.programacaointernet.bibliotecavirtualdaserasesquecidas.bibliotecavirtualdaserasesquecidas.model.Livro;
+import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
 import java.util.List;
 
+@Stateless
 public class LivroRepository {
     @PersistenceContext(unitName = "HibernateMaven")
     private EntityManager em;

@@ -2,10 +2,12 @@ package br.unipar.programacaointernet.bibliotecavirtualdaserasesquecidas.bibliot
 
 import br.unipar.programacaointernet.bibliotecavirtualdaserasesquecidas.bibliotecavirtualdaserasesquecidas.model.Livro;
 import br.unipar.programacaointernet.bibliotecavirtualdaserasesquecidas.bibliotecavirtualdaserasesquecidas.repository.LivroRepository;
+import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 
 import java.util.List;
 
+@Stateless
 public class LivroService {
     @Inject
     private LivroRepository livroRepository;

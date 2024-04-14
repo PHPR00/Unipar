@@ -3,10 +3,12 @@ package br.unipar.programacaointernet.bibliotecavirtualdaserasesquecidas.bibliot
 import br.unipar.programacaointernet.bibliotecavirtualdaserasesquecidas.bibliotecavirtualdaserasesquecidas.model.Estante;
 import br.unipar.programacaointernet.bibliotecavirtualdaserasesquecidas.bibliotecavirtualdaserasesquecidas.repository.EstanteRepository;
 
+import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 
 import java.util.List;
 
+@Stateless
 public class EstanteService {
     @Inject
     private EstanteRepository estanteRepository;
