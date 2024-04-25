@@ -2,7 +2,7 @@ package br.unipar.programacaointernet.bibliotecavirtualdaserasesquecidas.bibliot
 
 import jakarta.persistence.*;
 
-public class Estante {
+public class Itens_Venda {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer integer;
@@ -18,9 +18,9 @@ public class Estante {
     private String arquivo;
 
     @ManyToOne
-    private Usuario usuario;
+    private Cliente cliente;
 
     @ManyToOne
-    private Livro livro;
+    private Produto produto;
 
 }
